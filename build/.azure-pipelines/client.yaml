@@ -19,6 +19,6 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '../../src/client/'
+    PathtoPublish: '../../src/mcda_project.client/'
     ArtifactName: 'drop'
     publishLocation: 'Container'
