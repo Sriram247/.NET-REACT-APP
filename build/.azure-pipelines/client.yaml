@@ -14,7 +14,7 @@ steps:
 - task: Npm@1
   inputs:
     customCommand: 'npm install && npm run build'
-    workingDir: '$(Build.SourcesDirectory)/.NET-REACT-APP/tree/master/src/mcda_project.client'
+    workingDir: '$(Build.SourcesDirectory)/src/mcda_project.client'
   displayName: 'npm install and build'
 
 - task: PublishBuildArtifacts@1
