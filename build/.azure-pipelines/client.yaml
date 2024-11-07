@@ -2,7 +2,7 @@ trigger:
 - master
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: windows-latest
 
 steps:
 - task: NodeTool@0
@@ -10,6 +10,19 @@ steps:
     versionSource: 'spec'
     versionSpec: '16.13.1'
   displayName: 'Install Node.js'
+
+# - task: Npm@1
+#   inputs:
+#     command: 'install'
+#     workingDir: 'src/mcda_project.client/'
+#   displayName: 'Install Packages'
+
+# - task: Npm@1
+#   inputs:
+#     command: 'custom'
+#     workingDir: 'src/mcda_project.client/'
+#     customCommand: 'run build'
+#   displayName: 'Build Project'
 
 - script: |
     cd src/mcda_project.client/
@@ -20,6 +33,6 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '../../src/mcda_project.client/'
+    PathtoPublish: '/src/mcda_project.client/dist'
     ArtifactName: 'drop'
     publishLocation: 'Container'
