@@ -14,7 +14,7 @@ steps:
 - task: Npm@1
   inputs:
     customCommand: 'npm install && npm run build'
-    workingDir: ''$(Build.SourcesDirectory)/src/mcda_project.client/package.json'
+    workingDir: '$(Build.SourcesDirectory)/src/mcda_project.client/package.json'
   displayName: 'npm install and build'
 
 - task: PublishBuildArtifacts@1
